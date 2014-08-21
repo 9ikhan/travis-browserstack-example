@@ -11,6 +11,8 @@ describe "The welcome demo" do
     caps = Selenium::WebDriver::Remote::Capabilities.new
     caps['browserstack.local'] = true
     caps['browserstack.debug'] = true
+    caps['build'] = 'Travis'
+    caps['name'] = ENV['TRAVIS_BUILD_NUMBER'] || ''
     @driver = Selenium::WebDriver.for(:remote, :url => "http://#{browserstack_user}:#{browserstack_key}@hub.browserstack.com/wd/hub", :desired_capabilities => caps) 
  end
 
