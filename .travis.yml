@@ -6,10 +6,10 @@ env:
   - secure: KMBdr6M12EWVHD0Po8o5tgqVwuBI+MUJXSiiigG5kyGv2t3dpVZpWzaQ9dmEf+767wemPwh3JWJcjL1YHQnVVlITnG0rKDwInzxfA6fQOS6tmotbY8qxfRwhhzw9E/GiSECyiVeTY92dLLXQqWVRbWh3L7s+e9aKnVuk1OxJ8Q4=
   - secure: EdzpGvSHcuMNVOTb5sZ3KQanPYbwGVF0JSlrce7RjbDPEmc6TxGk+4dvuWWjfY0V7PhQ2zO5EG4F+L0n+bFehFRmPhj98N9rtzshfeO1QNn/00PcoQeBN1x1Kxh6Qy3/gmdsO3jGcCCmJntHwwP/EJGiIAoBmoaWlDDA82LMj4o=
 before_script:
-  - wget http://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip
-  - unzip BrowserStackLocal-linux-x64.zip
   - bundle install
   - bundle exec rackup -p 8001 > /dev/null &
+  - wget http://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip
+  - unzip BrowserStackLocal-linux-x64.zip
   - ./BrowserStackLocal $BROWSERSTACK_KEY localhost,8001,0 > /dev/null &
   - sleep 10
 script:
