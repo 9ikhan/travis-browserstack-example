@@ -9,6 +9,9 @@ describe "The welcome demo" do
     browserstack_user = ENV['BROWSERSTACK_USER']
     browserstack_key = ENV['BROWSERSTACK_KEY']
     caps = Selenium::WebDriver::Remote::Capabilities.new
+    caps['os'] = 'windows'
+    caps['os_version'] = '7'
+    caps['browser'] = 'chrome'
     caps['browserstack.local'] = true
     caps['browserstack.debug'] = true
     caps['build'] = 'Travis'
