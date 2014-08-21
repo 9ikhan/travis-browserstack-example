@@ -11,7 +11,8 @@ env:
 before_script:
   - wget http://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip
   - unzip BrowserStackLocal-linux-x64.zip
-  - ./BrowserStackLocal $BROWSERSTACK_KEY localhost,8000,0 &
+  - rackup -p 8001
+  - ./BrowserStackLocal $BROWSERSTACK_KEY localhost,8001,0 &
   - sleep 10
 script:
   - rspec spec/welcome.rb
