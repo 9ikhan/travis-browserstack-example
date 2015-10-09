@@ -1,6 +1,6 @@
 # travis-browserstack-example
 
-This repository contains a simple sinatra app which is tested using Selenium, RSpec and Travis on [BrowserStack](https://www.browserstack.com/automate)
+This repository contains a simple sinatra app which is tested using Selenium-WebDriver, RSpec and Travis on [BrowserStack](https://www.browserstack.com/automate)
 
 ## Local Testing
 
